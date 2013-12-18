@@ -5,8 +5,14 @@
 	<p class="tasks-counter"><i class="fa fa-circle"></i> 6</p><!-- Remaining -->
 	<div class="clear"></div>
 </header>
-
 <ul class="task-list">
+<% _.each(tasks, function(task){ %>
+	<li><input type="checkbox" id="1" /><label for="1"><span></span></label><%= task.attributes.task %></li>
+<% }); %>
+</ul>
+
+
+<!--<ul class="task-list">
 	<li><input type="checkbox" id="1" /><label for="1"><span></span></label>Task</li>
 	<li><input type="checkbox" id="2" /><label for="2"><span></span></label>Task</li>
 	<li><input type="checkbox" id="3" /><label for="3"><span></span></label>Task</li>
@@ -22,4 +28,4 @@
 	<li><input type="checkbox" id="13" /><label for="13"><span></span></label>Task</li>
 	<li><input type="checkbox" id="14" /><label for="14"><span></span></label>Task</li>
 	<li><input type="checkbox" id="15" /><label for="15"><span></span></label>Task</li>
-</ul>
+</ul>-->

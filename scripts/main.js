@@ -5,7 +5,8 @@ require.config({
 		"jquery": "vendor/jquery/jquery-min",
 		"underscore": "vendor/underscore/underscore-min",
 		"backbone": "vendor/backbone/backbone-min",
-		"text": "vendor/require/text"
+		"text": "vendor/require/text",
+		"localstorage": "vendor/backbone/backbone.localStorage-min"
 	}
 });
 

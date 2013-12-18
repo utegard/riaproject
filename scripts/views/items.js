@@ -3,10 +3,12 @@ define(['backbone', 'text!templates/tasklist.html'], function(Backbone, MainTemp
 		el: '.app',
 		template: _.template(MainTemplate),
 		initialize: function(){
+			this.collection.fetch();
 			this.render();
 		},
 		render: function(){
-			this.$el.html(this.template({}));
+			console.log(this.collection.models);
+			this.$el.html(this.template({tasks: this.collection.models}));
 		}
 	});
 
