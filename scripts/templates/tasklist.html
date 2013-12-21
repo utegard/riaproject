@@ -14,8 +14,13 @@
 
 <ul class="task-list">
 	<% _.each(tasks, function(task){ %>
-
-		<li><input type="checkbox" id="<%= task.cid %>" <% if (task.attributes.done) { %>checked="checked"<% } %>/><label for="<%= task.cid %>"><span></span></label><%= task.attributes.task %></li>
+		<li>
+			<input type="checkbox" id="<%= task.cid %>" <% if (task.attributes.done) { %>checked="checked"<% } %>/>
+			<label for="<%= task.cid %>">
+				<span></span>
+			</label>
+			<span class="<%= task.attributes.done %>"><%= task.attributes.task %></span>
+		</li>
 	<% }); %>
 </ul>
 <% } %>

@@ -6,14 +6,19 @@ define(['backbone', 'views/items', 'views/additem', 'collections/todos'], functi
 		},
 
 		initialize: function(){
+
 			this.todos = new Todos();
+			this.taskview = new TasksView({collection: this.todos});
+			this.additem = new AddItem({collection: this.todos});
+
 		},
 		home: function(){
-			new TasksView({collection: this.todos});
+			//new TasksView({collection: this.todos});
+			this.taskview.render();
 		},
 		addNewItem: function(){
-
-			new AddItem({collection: this.todos});
+			//new AddItem({collection: this.todos});
+			this.additem.render();
 		}
 	});
 	return Router;

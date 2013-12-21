@@ -3,14 +3,12 @@ define(['backbone', 'text!templates/createnew.html', 'models/todo'], function(Ba
 		el: '.app',
 		template: _.template(Template),
 		events: {
-			"submit form": "addItem"
+			"submit form": "addItem",
 		},
-		initialize: function(){
-			this.render();
+		initialize: function(options){
+			//this.render();
 		},
 		render: function(){
-
-			console.log(this.collection);
 			this.$el.html(this.template({}));
 		},
 		addItem: function(e){
@@ -20,18 +18,15 @@ define(['backbone', 'text!templates/createnew.html', 'models/todo'], function(Ba
 				console.log("empty");
 			}else{
 				var model = new Todo({task: userInput});
-				console.log(model);
 				if(model.isValid()){
 					this.collection.create(model);
-					console.log(this.collection);
 					this.$el.find("#task").val("");
-
 				}else{
 					console.log(model.validationError);
 				}
 			}
 
-		}
+		},
 	});
 
 	return AddItem;
