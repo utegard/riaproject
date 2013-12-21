@@ -3,7 +3,7 @@ define(['backbone'], function(Backbone){
 
 		defaults: {
 			task: "",
-			date: "",
+			date: new Date(),
 			done: false,
 		},
 		validate: function(attrs, options){

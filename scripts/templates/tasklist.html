@@ -1,31 +1,21 @@
 <header class="main-header">
 	<a href="#/new" class="add-new-item">+</a>
 	<h1 class="title">Tasklist</h1>
-	<p class="tasks-completed"><i class="fa fa-check"></i> 10</p><!-- Completed -->
-	<p class="tasks-counter"><i class="fa fa-circle"></i> 6</p><!-- Remaining -->
+	<!--<p class="tasks-completed"><i class="fa fa-check"></i> 10</p> Completed -->
+	<!--<p class="tasks-counter"><i class="fa fa-circle"></i> 6</p> Remaining -->
 	<div class="clear"></div>
 </header>
+
+
+
+<% if(tasks.length === 0){ %>
+	<p>There're no stored tasks</p>
+<% }else{ %>
+
 <ul class="task-list">
-<% _.each(tasks, function(task){ %>
-	<li><input type="checkbox" id="1" /><label for="1"><span></span></label><%= task.attributes.task %></li>
-<% }); %>
+	<% _.each(tasks, function(task){ %>
+
+		<li><input type="checkbox" id="<%= task.cid %>" <% if (task.attributes.done) { %>checked="checked"<% } %>/><label for="<%= task.cid %>"><span></span></label><%= task.attributes.task %></li>
+	<% }); %>
 </ul>
-
-
-<!--<ul class="task-list">
-	<li><input type="checkbox" id="1" /><label for="1"><span></span></label>Task</li>
-	<li><input type="checkbox" id="2" /><label for="2"><span></span></label>Task</li>
-	<li><input type="checkbox" id="3" /><label for="3"><span></span></label>Task</li>
-	<li><input type="checkbox" id="4" /><label for="4"><span></span></label>Task</li>
-	<li><input type="checkbox" id="5" /><label for="5"><span></span></label>Task</li>
-	<li><input type="checkbox" id="6" /><label for="6"><span></span></label>Task</li>
-	<li><input type="checkbox" id="7" /><label for="7"><span></span></label>Task</li>
-	<li><input type="checkbox" id="8" /><label for="8"><span></span></label>Task</li>
-	<li><input type="checkbox" id="9" /><label for="9"><span></span></label>Task</li>
-	<li><input type="checkbox" id="10" /><label for="10"><span></span></label>Task</li>
-	<li><input type="checkbox" id="11" /><label for="11"><span></span></label>Task</li>
-	<li><input type="checkbox" id="12" /><label for="12"><span></span></label>Task</li>
-	<li><input type="checkbox" id="13" /><label for="13"><span></span></label>Task</li>
-	<li><input type="checkbox" id="14" /><label for="14"><span></span></label>Task</li>
-	<li><input type="checkbox" id="15" /><label for="15"><span></span></label>Task</li>
-</ul>-->
+<% } %>

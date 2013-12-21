@@ -12,6 +12,7 @@ define(['backbone', 'views/items', 'views/additem', 'collections/todos'], functi
 			new TasksView({collection: this.todos});
 		},
 		addNewItem: function(){
+
 			new AddItem({collection: this.todos});
 		}
 	});
