@@ -4,10 +4,11 @@ define(['backbone'], function(Backbone){
 		defaults: {
 			task: "",
 			date: new Date(),
+			prio: "",
 			done: false,
 		},
 		validate: function(attrs, options){
-			var letters = /^[A-Za-z]+$/;
+			var letters = /^[A-Za-z0-9 _]*$/;
 			if(!attrs.task.match(letters)){
 				return "Wrong input format";
 			}

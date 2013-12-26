@@ -1,20 +1,25 @@
+<% if(tasks.length === 0){ %>
+<div class="splash">
+	<div class="intro-text">
+		<p>There're no stored tasks</p>
+	</div>
+
+	<div class="start">
+		<a href="#new">Get Started</a>
+	</div>
+</div>
+<% }else{ %>
 <header class="main-header">
 	<a href="#/new" class="add-new-item">+</a>
 	<h1 class="title">Tasklist</h1>
-	<!--<p class="tasks-completed"><i class="fa fa-check"></i> 10</p> Completed -->
-	<!--<p class="tasks-counter"><i class="fa fa-circle"></i> 6</p> Remaining -->
+	<p class="tasks-completed"><i class="fa fa-check"></i> <%= completed %></p><!-- -->
+	<p class="tasks-counter"><i class="fa fa-circle"></i> <%= remaining %></p><!-- Remaining -->
 	<div class="clear"></div>
 </header>
 
-
-
-<% if(tasks.length === 0){ %>
-	<p>There're no stored tasks</p>
-<% }else{ %>
-
 <ul class="task-list">
 	<% _.each(tasks, function(task){ %>
-		<li>
+		<li class="<%= task.attributes.prio %>-prio item">
 			<input type="checkbox" id="<%= task.cid %>" <% if (task.attributes.done) { %>checked="checked"<% } %>/>
 			<label for="<%= task.cid %>">
 				<span></span>
