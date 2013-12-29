@@ -5,12 +5,13 @@ define(['backbone', 'text!templates/tasklist.html'], function(Backbone, MainTemp
 		events: {
 			'click [type="checkbox"]': 'toggle',
 			"dblclick .item"  : "edit",
+			"click .delete" : "clear",
 		},
 		initialize: function(){
 			this.collection.fetch();
 		},
 		render: function(){
-			console.log(this.collection.models);
+			//console.log(this.collection.models);
 			var completed = this.collection.completed().length;
 			var remaining = this.collection.remaining().length;
 
@@ -28,7 +29,14 @@ define(['backbone', 'text!templates/tasklist.html'], function(Backbone, MainTemp
 
 			/*model.save({task: "Tjo"});
 			this.render();*/
-		}
+		},
+		clear: function(){
+			var completed = this.collection.completed();
+			for (var i = 0; i < completed.length; i++) {
+				completed[i].destroy();
+			}
+			this.render();
+		},
 	});
 
 	return TasksView;

@@ -162,10 +162,25 @@ input[type="checkbox"]:checked + label span {
 	padding: 0 2%;
 	width: 96%;
 }
+.delete{
+	display: block;
+	font-size: 1.8rem;
+	margin-top: 2%;
+	text-align: center;
+	width: 100%;
+}
+.delete:hover{
+	cursor: pointer;
+}
 
+.taskprio{
+	text-align: center;
+	width: 100%;
+	margin-top: 4%;
+}
 .add-prio{
 	margin: 0 auto;
-	margin-top: 4%;
+	margin-top: 1%;
 	margin-bottom: 4%;
 	width: 130px;
 }
@@ -210,7 +225,12 @@ input[type="radio"]:checked + label span {
 .orange-prio{
 	border-right: 10px solid #EC943D;
 }
-
+.addButton{
+	background-color: #74AC2C;
+	border: 0;
+	color: #E9EADA;
+	padding: 8px 30px;
+}
 .clear{
 	clear: both;
 }
