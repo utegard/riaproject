@@ -121,6 +121,11 @@ body{
 	text-align: center;
 	text-decoration: none;
 }
+.editDescription{
+	margin: 2% 0;
+	text-align: center;
+	width: 100%;
+}
 .task-list{
 	margin: 0 auto;
 	width: 95%;
@@ -225,7 +230,7 @@ input[type="radio"]:checked + label span {
 .orange-prio{
 	border-right: 10px solid #EC943D;
 }
-.addButton{
+.addButton, .editButton{
 	background-color: #74AC2C;
 	border: 0;
 	color: #E9EADA;

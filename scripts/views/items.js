@@ -25,8 +25,10 @@ define(['backbone', 'text!templates/tasklist.html'], function(Backbone, MainTemp
 		},
 		edit: function(e){
 			var cid = e.currentTarget.childNodes[1].id;
-			var model = this.collection.get(cid);
+			//var model = this.collection.get(cid);
+			//console.log("edit");
 
+			Backbone.history.navigate("new/"+cid, true);
 			/*model.save({task: "Tjo"});
 			this.render();*/
 		},

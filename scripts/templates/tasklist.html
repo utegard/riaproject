@@ -16,7 +16,7 @@
 	<p class="tasks-counter"><i class="fa fa-circle"></i> <%= remaining %></p><!-- Remaining -->
 	<div class="clear"></div>
 </header>
-
+<p class="editDescription">Double click on a task to edit</p>
 <ul class="task-list">
 	<% _.each(tasks, function(task){ %>
 		<li class="<%= task.attributes.prio %>-prio item">

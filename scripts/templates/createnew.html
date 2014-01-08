@@ -3,23 +3,31 @@
 	<h1 class="title">Add new task</h1>
 	<div class="clear"></div>
 </header>
+
+
+
 <div class="item-form">
 	<form>
 		<input id="task" type="text" placeholder="Enter your task" />
 		<p class="taskprio">Priority</p>
 		<div class="add-prio">
-			<input type="radio" name="prio" id="1" value="blue" checked="true">
-			<label for="1"><span class="blue"></span></label>
-			<input type="radio" name="prio" id="2" value="purple">
-			<label for="2"><span class="purple"></span></label>
-			<input type="radio" name="prio" id="3" value="orange">
-			<label for="3"><span class="orange"></span></label>
-			<input type="radio" name="prio" id="4" value="brown">
-			<label for="4"><span class="brown"></span></label>
+			<input type="radio" name="prio" id="blue" value="blue" checked="true">
+			<label for="blue"><span class="blue"></span></label>
+			<input type="radio" name="prio" id="purple" value="purple">
+			<label for="purple"><span class="purple"></span></label>
+			<input type="radio" name="prio" id="orange" value="orange">
+			<label for="orange"><span class="orange"></span></label>
+			<input type="radio" name="prio" id="brown" value="brown">
+			<label for="brown"><span class="brown"></span></label>
 		</div>
 
+		<% if (typeof(task) != "undefined") { %>
+			<button type="button" class="editButton">Edit</button>
+		<% }else{ %>
 
-		<button class="addButton">Add</button>
+			<button type="button" class="addButton">Add</button>
+		<% }%>
+
 
 
 

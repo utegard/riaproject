@@ -2,7 +2,8 @@ define(['backbone', 'views/items', 'views/additem', 'collections/todos'], functi
 	var Router = Backbone.Router.extend({
 		routes: {
 			"": "home",
-			"new": "addNewItem"
+			"new": "addNewItem",
+			"new/:id": "editItem",
 		},
 
 		initialize: function(){
@@ -17,6 +18,9 @@ define(['backbone', 'views/items', 'views/additem', 'collections/todos'], functi
 		},
 		addNewItem: function(){
 			this.additem.render();
+		},
+		editItem: function(id){
+			this.additem.edit(id);
 		}
 	});
 	return Router;
