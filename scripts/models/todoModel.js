@@ -8,7 +8,7 @@ define(['backbone'], function(Backbone){
 			done: false,
 		},
 		validate: function(attrs, options){
-			var letters = /^[A-Za-z0-9 _]*$/;
+			var letters = /^[A-ZÅÄÖa-zåäö0-9 _]*$/;
 			if(!attrs.task.match(letters)){
 				return "Wrong input format";
 			}
