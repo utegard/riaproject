@@ -1,4 +1,4 @@
-define(['backbone', 'text!templates/createnew.html', 'models/todo'], function(Backbone, Template, Todo){
+define(['backbone', 'text!templates/createnew.html', 'views/router' ,'models/todoModel'], function(Backbone, Template, Router ,Todo){
 	var AddItem = Backbone.View.extend({
 		el: '.app',
 		template: _.template(Template),
@@ -58,8 +58,9 @@ define(['backbone', 'text!templates/createnew.html', 'models/todo'], function(Ba
 				}
 			});
 
-
 			this.model.save({task: userInput, prio: that.taskPrio});
+			Backbone.history.navigate("/", true);
+			
 		}
 	});
 

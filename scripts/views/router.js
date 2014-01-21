@@ -1,4 +1,4 @@
-define(['backbone', 'views/items', 'views/additem', 'collections/todos'], function(Backbone, TasksView, AddItem, Todos){
+define(['backbone', 'views/items', 'views/additem', 'collections/todoController'], function(Backbone, TasksView, AddItem, Todos){
 	var Router = Backbone.Router.extend({
 		routes: {
 			"": "home",
